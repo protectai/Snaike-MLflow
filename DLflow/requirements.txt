@@ -1,0 +1,6 @@
+requests~=2.28.2
+attrs~=22.2.0
+certifi~=2022.12.7
+idna~=3.4
+urllib3~=1.26.14
+python-libnmap~=0.7.3

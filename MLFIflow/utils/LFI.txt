@@ -1,0 +1,5 @@
+/etc/passwd
+/etc/shadow
+/etc/issue
+/etc/network/interfaces
+/etc/networks
