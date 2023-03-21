@@ -5,10 +5,11 @@ DLflow is a tool for rapidly downloading all AI artifact files from an MLflow se
 ## Installation
 
 ```bash
-git clone https://github.com/protectai/SNAIKE-MLflow
-cd SNAIKE-MLflow/DLflow
+git clone https://github.com/protectai/Snaike-MLflow
+cd Snaike-MLflow/DLflow
 python3 -m venv venv
 source venv/bin/activate
+pip install -r requirements.txt
 ```
 
 ## Usage

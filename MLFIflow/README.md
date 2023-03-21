@@ -5,8 +5,8 @@ MLFIflow is an exploit tool for reading arbitrary files from MLflow servers vers
 ## Installation
 
 ```bash
-git clone https://github.com/protectai/MLFIflow.git
-cd MLFIflow
+git clone https://github.com/protectai/Snaike-MLflow.git
+cd Snaike-MLflow/MLFIflow
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
