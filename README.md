@@ -23,6 +23,8 @@ python CVE-2023-1177-scanner.py -s http://1.2.3.4:5000
 A tool for exploiting MLflow servers vulnerable to the LFI/RFI vulnerability CVE-2023-1177. 
 See MLFIflow/README.md for more information.
 
+[Hacking AI: System Takeover Exploit in MLflow](https://protectai.com/blog/hacking-ai-system-takeover-exploit-in-mlflow)
+
 ```bash
 git clone https://github.com/protectai/Snaike-MLflow
 cd Snaike-MLflow/MLFIflow
@@ -35,6 +37,8 @@ python MLFIflow.py -s http://1.2.3.4:5000
 ## DLflow
 This tool allows you to quickly download all files from a discovered MLflow server. MLflow has no method of authentication allowing anyone with access to the server to download all files.
 See DLflow/README.md for more information.
+
+[Hacking AI: Steal Models from MLflow, no Exploit Needed](https://protectai.com/blog/hacking-ai-download-models-from-mlflow)
 
 ```bash
 git clone https://github.com/protectai/Snaike-MLflow
