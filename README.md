@@ -4,7 +4,7 @@ Snaike: ProtectAI's Python AI red teaming toolsuite
 
 MLflow: Platform for the machine learning lifecycle
 
-CVE-2023-1177 is an LFI/RFI vulnerability in MLflow <2.2.1 exploitable with the MLFIflow tool. It allows an unauthenticated, remote attacker to read arbitrary files such as SSH and AWS keys as well as remote files. MLflow is vulnerable to this out of the box with any configuration and requires no prerequisite knowledge or user interaction. Additionally, because MLflow has no method of authorization or authetication, anyone with access to the server can download the models and artifacts of other users. DLflow exploits this by asynchronously downloading all artifacts from all users. CVE-2023-1177-scanner is a remote tool for scanning MLflow server for the vulnerability.
+CVE-2023-1177 is an LFI/RFI vulnerability in MLflow <2.2.3 exploitable with the MLFIflow tool. It allows an unauthenticated, remote attacker to read arbitrary files such as SSH and AWS keys as well as remote files. MLflow is vulnerable to this out of the box with any configuration and requires no prerequisite knowledge or user interaction. Additionally, because MLflow has no method of authorization or authetication, anyone with access to the server can download the models and artifacts of other users. DLflow exploits this by asynchronously downloading all artifacts from all users. CVE-2023-1177-scanner is a remote tool for scanning MLflow server for the vulnerability.
 
 ## CVE-2023-1177-scanner
 A tool for scanning MLflow servers for the LFI/RFI vulnerability CVE-2023-1177. 
