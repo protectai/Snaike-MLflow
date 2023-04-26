@@ -31,14 +31,14 @@ def args():
 def get_target_files(args):
     target_files = []
     if args.target_file:
-        target_file = f'file://{args.target_file}'
+        target_file = f'file://.{args.target_file}'
         target_files.append(target_file)
 
     elif args.file:
         with open(args.file, 'r') as f:
             targets = f.readlines()
             for target in targets:
-                target_files.append(f'file://{target.strip()}')
+                target_files.append(f'file://.{target.strip()}')
     else:
         print("[-] Error: No targets specified")
         exit(1)

@@ -45,7 +45,7 @@ class SecretsFinder:
     def get_secrets(self, secrets_filepaths: list) -> dict:
         secrets = {}
         for s in secrets_filepaths:
-            proto_s = "file://" + s
+            proto_s = "file://." + s
             file_found = self.ac.run(proto_s) # file_found = {"remote/file/path": "file_content"}
             if file_found:
                 secrets[s] = file_found[s]
