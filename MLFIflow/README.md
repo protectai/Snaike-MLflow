@@ -1,6 +1,6 @@
 # MLFIflow
 
-MLFIflow is an exploit tool for reading arbitrary files from MLflow servers version 1.12 - 2.1.1.
+MLFIflow is an exploit tool for reading arbitrary files from MLflow servers version 1.12 - 2.2.2.
 
 ## Installation
 
