@@ -1,5 +1,6 @@
 import requests
 from pathlib import Path
+import sys
 
 
 class APICalls:
@@ -30,10 +31,12 @@ class APICalls:
 
     def get_source_folder(self, source: str) -> str:
         # Split the source into the folder and file
-        source = source.split("://")[1]
+        source_split = source.split("://")
+        source_protocol = source_split[0]
+        source = source_split[1]
         if source.count('/') > 1:
-            source = source.rsplit('/', 1)[0]
-        return source
+            source_folder = source.rsplit('/', 1)[0]
+        return source_protocol + "://" + source_folder
 
     def create_model(self) -> requests.Response:
         resp = requests.post(f'{self.host}/ajax-api/2.0/mlflow/registered-models/create', json={"name": f"{self.identifier}"})
@@ -61,7 +64,10 @@ class APICalls:
         return resp
 
     def create_folder(self) -> str:
-        folder_name = self.host.split('//')[1].split(':')[0] + "_files"
+        try:
+            folder_name = self.host.split('//')[1].split(':')[0] + "_files"
+        except IndexError:
+            sys.exit("[-] Invalid host, did you include the protocol like http:// or https:// for the -s option?")
         Path(folder_name).mkdir(parents=True, exist_ok=True)
         return folder_name
 

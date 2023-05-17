@@ -25,20 +25,29 @@ def args():
     parser.add_argument('--scan',
                         help='Scan server for vulnerability',
                         action='store_true')
+    parser.add_argument('--remote-artifact-store',
+                        help='The remote artifact store server, e.g., "http://1.2.3.4:5000/artifacts/"',
+                        required=False)
     args = parser.parse_args()
     return args
 
 def get_target_files(args):
     target_files = []
     if args.target_file:
-        target_file = f'file://.{args.target_file}'
+        if args.remote_artifact_store:
+            target_file = f'{args.remote_artifact_store}../../../../../../../..{args.target_file}'
+        else:
+            target_file = f'file://.{args.target_file}'
         target_files.append(target_file)
 
     elif args.file:
         with open(args.file, 'r') as f:
             targets = f.readlines()
             for target in targets:
-                target_files.append(f'file://.{target.strip()}')
+                if args.remote_artifact_store:
+                    target_files.append(f'{args.remote_artifact_store}../../../../../../../..{target.strip()}')
+                else:
+                    target_files.append(f'file://.{target.strip()}')
     else:
         print("[-] Error: No targets specified")
         exit(1)
